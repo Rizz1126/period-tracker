@@ -1,0 +1,105 @@
+.symptom-entry {
+  margin: var(--space-lg);
+}
+
+.symptom-entry-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+}
+
+.symptom-time-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  background: var(--pink-50);
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--pink-500);
+}
+
+.symptom-scroll {
+  display: flex;
+  gap: var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-sm);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.symptom-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.symptom-group {
+  min-width: 160px;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.symptom-group-title {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-sm);
+}
+
+.symptom-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.symptom-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  border: 1.5px solid transparent;
+  transition: all var(--transition-fast);
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.symptom-option:hover {
+  border-color: var(--pink-300);
+  background: var(--pink-50);
+}
+
+.symptom-option.selected {
+  border-color: var(--pink-500);
+  background: var(--pink-50);
+  color: var(--pink-700);
+  box-shadow: 0 2px 8px rgba(236, 64, 122, 0.15);
+  animation: bounceIn 0.3s ease;
+}
+
+.symptom-option-emoji {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.symptom-option-label {
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .symptom-scroll {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: visible;
+  }
+
+  .symptom-group {
+    min-width: auto;
+  }
+}

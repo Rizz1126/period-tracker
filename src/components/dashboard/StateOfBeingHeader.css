@@ -1,0 +1,166 @@
+.state-header {
+  position: relative;
+  padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  overflow: hidden;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Phase-based gradient backgrounds */
+.state-header.phase-menstruation {
+  background: linear-gradient(135deg, #FCE4EC 0%, #F8BBD0 40%, #F48FB1 100%);
+}
+.state-header.phase-follicular {
+  background: linear-gradient(135deg, #FFF8E1 0%, #FFE0B2 40%, #FFCC80 100%);
+}
+.state-header.phase-ovulation {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 40%, #A5D6A7 100%);
+}
+.state-header.phase-luteal {
+  background: linear-gradient(135deg, #F3E5F5 0%, #E1BEE7 40%, #CE93D8 100%);
+}
+
+[data-theme='dark'] .state-header.phase-menstruation {
+  background: linear-gradient(135deg, #3D1520 0%, #6B1A35 40%, #8B2050 100%);
+}
+[data-theme='dark'] .state-header.phase-follicular {
+  background: linear-gradient(135deg, #2D2418 0%, #4A3520 40%, #6B4D28 100%);
+}
+[data-theme='dark'] .state-header.phase-ovulation {
+  background: linear-gradient(135deg, #152D1A 0%, #1A4A22 40%, #20602A 100%);
+}
+[data-theme='dark'] .state-header.phase-luteal {
+  background: linear-gradient(135deg, #2D1540 0%, #451A65 40%, #5A208A 100%);
+}
+
+/* Decorative floating elements */
+.header-deco {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.15;
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+.header-deco-1 { top: 15%; right: 10%; animation-delay: 0s; font-size: 2rem; }
+.header-deco-2 { top: 60%; right: 25%; animation-delay: 1.5s; }
+.header-deco-3 { bottom: 15%; left: 8%; animation-delay: 0.8s; font-size: 1.75rem; }
+
+[data-theme='dark'] .header-deco {
+  opacity: 0.1;
+}
+
+/* Mobile toggles */
+.header-actions {
+  display: flex;
+  gap: var(--space-sm);
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .header-actions {
+    display: none;
+  }
+}
+
+.header-action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+[data-theme='dark'] .header-action-btn {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--text-primary);
+}
+
+.header-action-btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.05);
+}
+
+/* Content */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 639px) {
+  .header-content {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-lg);
+  }
+}
+
+.header-info {
+  flex: 1;
+}
+
+.phase-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+[data-theme='dark'] .phase-badge {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.phase-emoji {
+  font-size: 1.1rem;
+}
+
+.predictive-text {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+@media (min-width: 640px) {
+  .predictive-text {
+    font-size: 2rem;
+  }
+}
+
+.fertility-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--phase-ovulation);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.fertility-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--phase-ovulation);
+  box-shadow: 0 0 8px var(--phase-ovulation);
+}

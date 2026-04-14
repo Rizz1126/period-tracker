@@ -1,0 +1,413 @@
+.analysis-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.analysis-page .page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.export-btn {
+  white-space: nowrap;
+}
+
+/* Section title */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ===== Today's Log Summary ===== */
+.today-summary-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.today-summary-section .section-title {
+  margin-bottom: var(--space-md);
+  color: var(--pink-500);
+}
+
+.today-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-sm);
+}
+
+.today-summary-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent, var(--pink-400));
+  transition: transform var(--transition-fast);
+}
+
+.today-summary-item:hover {
+  transform: translateX(3px);
+}
+
+.today-summary-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent, var(--pink-400));
+}
+
+.today-summary-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-bottom: 1px;
+}
+
+.today-summary-value {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  word-break: break-word;
+}
+
+/* ===== Wellness Score Card ===== */
+.wellness-score-card {
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+}
+
+.wellness-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.wellness-body {
+  display: flex;
+  gap: var(--space-xl);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.wellness-ring {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+}
+
+.wellness-svg {
+  width: 100%;
+  height: 100%;
+  animation: ringPulse 3s ease infinite;
+}
+
+.wellness-score-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.wellness-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.wellness-max {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  display: block;
+}
+
+.wellness-details {
+  flex: 1;
+  min-width: 200px;
+}
+
+.wellness-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.wellness-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.wellness-breakdown {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xs);
+}
+
+.breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  background: var(--bg-input);
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}
+
+.breakdown-weight {
+  font-weight: 700;
+  color: var(--pink-500);
+}
+
+/* ===== Stats Grid ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.stat-card {
+  text-align: center;
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink-400), var(--pink-600));
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.stat-icon {
+  color: var(--pink-400);
+  margin-bottom: var(--space-sm);
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: var(--space-xs);
+}
+
+/* ===== Analysis Cards ===== */
+.analysis-card {
+  margin-bottom: var(--space-lg);
+}
+
+.analysis-card .widget-title {
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.analysis-card .widget-subtitle {
+  margin-bottom: var(--space-md);
+}
+
+.analysis-chart {
+  margin-top: var(--space-sm);
+}
+
+/* ===== Period Timing Alert ===== */
+.analysis-alert {
+  margin-bottom: var(--space-lg);
+}
+
+/* ===== Cycle Summary Card ===== */
+.cycle-summary-card {
+  margin-bottom: var(--space-lg);
+}
+
+.cycle-summary-card.active-cycle {
+  border-left: 4px solid var(--pink-500);
+}
+
+.cycle-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.timing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.timing-badge.timing-normal {
+  background: rgba(102, 187, 106, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(102, 187, 106, 0.3);
+}
+
+.timing-badge.timing-early {
+  background: rgba(239, 83, 80, 0.12);
+  color: var(--error);
+  border: 1px solid rgba(239, 83, 80, 0.3);
+}
+
+.timing-badge.timing-late {
+  background: rgba(255, 167, 38, 0.12);
+  color: var(--warning);
+  border: 1px solid rgba(255, 167, 38, 0.3);
+}
+
+.cycle-summary-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.cs-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 70px;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.cs-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.cs-stat-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+
+.cycle-summary-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.cs-tag-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.cs-tag-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.cs-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.cs-tag.mood-tag {
+  background: linear-gradient(135deg, var(--pink-50), var(--pink-100));
+  color: var(--pink-600);
+  border: 1px solid var(--pink-200);
+}
+
+.cs-tag.symptom-tag {
+  background: var(--bg-input);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+}
+
+@media (max-width: 639px) {
+  .analysis-page .page-header {
+    flex-direction: column;
+  }
+
+  .export-btn {
+    width: 100%;
+  }
+
+  .today-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wellness-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .wellness-breakdown {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cycle-summary-stats {
+    gap: var(--space-sm);
+  }
+
+  .cs-stat {
+    min-width: 60px;
+    padding: var(--space-xs) var(--space-sm);
+  }
+}

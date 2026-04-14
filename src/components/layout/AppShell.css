@@ -1,0 +1,18 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  min-height: 100vh;
+  padding-bottom: calc(var(--nav-height) + 16px);
+  overflow-x: hidden;
+}
+
+@media (min-width: 1024px) {
+  .app-main {
+    margin-left: var(--sidebar-width);
+    padding-bottom: 0;
+  }
+}

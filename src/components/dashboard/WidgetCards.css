@@ -1,0 +1,329 @@
+/* ============================================
+   Shared Widget Card Styles
+   ============================================ */
+
+.widget-card {
+  min-width: 0; /* Prevent grid overflow */
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.widget-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.widget-title {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.widget-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.widget-add-btn {
+  margin-left: auto;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  background: var(--pink-50);
+  color: var(--pink-500);
+  transition: all var(--transition-fast);
+}
+
+.widget-add-btn:hover {
+  background: var(--pink-100);
+  transform: scale(1.05);
+}
+
+/* Chart container */
+.widget-chart {
+  position: relative;
+  margin-top: var(--space-sm);
+}
+
+.chart-today-marker {
+  position: absolute;
+  top: 0;
+  bottom: 20px;
+  pointer-events: none;
+}
+
+.today-marker-line {
+  width: 2px;
+  height: 100%;
+  background: var(--pink-500);
+  opacity: 0.5;
+  border-radius: 1px;
+}
+
+.today-marker-label {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.5625rem;
+  font-weight: 700;
+  color: var(--pink-500);
+  white-space: nowrap;
+}
+
+/* Tooltip */
+.widget-tooltip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  box-shadow: var(--shadow-md);
+  font-size: 0.75rem;
+}
+
+.widget-tooltip-title {
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: var(--text-primary);
+}
+
+/* Hormone pills */
+.hormone-levels {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.hormone-pill {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.hormone-pill strong {
+  color: var(--text-primary);
+}
+
+.hormone-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* BBT Input */
+.bbt-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  animation: fadeIn 0.2s ease;
+}
+
+.bbt-input {
+  width: 80px;
+  padding: 6px 10px;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bbt-input:focus {
+  outline: none;
+  border-color: var(--pink-500);
+  box-shadow: 0 0 0 3px rgba(236, 64, 122, 0.15);
+}
+
+.bbt-unit {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.75rem;
+}
+
+/* Activity guide */
+.activity-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+}
+
+.activity-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--bg-input);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.activity-item:hover {
+  background: var(--pink-50);
+  transform: translateX(3px);
+}
+
+.activity-emoji {
+  font-size: 1.25rem;
+}
+
+.activity-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-name {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.activity-duration {
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+}
+
+/* Cycle Consistency bars */
+.consistency-bars {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.consistency-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.consistency-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  width: 64px;
+  flex-shrink: 0;
+}
+
+.consistency-track {
+  flex: 1;
+  height: 8px;
+  background: var(--bg-input);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.consistency-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.consistency-fill.current {
+  background: linear-gradient(90deg, var(--pink-400), var(--pink-500));
+}
+
+.consistency-fill.last {
+  background: var(--pink-300);
+}
+
+.consistency-fill.average {
+  background: var(--phase-follicular);
+}
+
+.consistency-fill.predicted {
+  background: var(--phase-ovulation);
+}
+
+.consistency-value {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Insights section */
+.insights-section {
+  padding: 0 var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.section-icon {
+  color: var(--pink-500);
+}
+
+.insights-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.insight-card {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+}
+
+.insight-card:hover {
+  border-color: var(--border-medium);
+}
+
+.insight-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.insight-content {
+  flex: 1;
+}
+
+.insight-title {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.insight-body {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}

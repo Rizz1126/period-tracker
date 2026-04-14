@@ -1,0 +1,433 @@
+/* ============================================
+   Period Tracker — Design System
+   "Hello Kitty" Kawaii Pink Theme
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ---- Light Mode (Default) ---- */
+:root {
+  /* Background */
+  --bg-primary: #FFF0F5;
+  --bg-secondary: #FCE4EC;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFF5F8;
+  --bg-input: #FFF0F5;
+  --bg-nav: rgba(255, 255, 255, 0.88);
+
+  /* Pink Palette */
+  --pink-50: #FDE8EF;
+  --pink-100: #FCE4EC;
+  --pink-200: #F8BBD0;
+  --pink-300: #F48FB1;
+  --pink-400: #F06292;
+  --pink-500: #EC407A;
+  --pink-600: #D81B60;
+  --pink-700: #C2185B;
+  --pink-800: #AD1457;
+  --pink-900: #880E4F;
+
+  /* Text */
+  --text-primary: #2D2D2D;
+  --text-secondary: #757575;
+  --text-tertiary: #A0A0A0;
+  --text-on-pink: #FFFFFF;
+
+  /* Phase Accent Colors */
+  --phase-menstruation: #EF5350;
+  --phase-menstruation-bg: linear-gradient(135deg, #FFCDD2, #EF9A9A);
+  --phase-follicular: #FFB74D;
+  --phase-follicular-bg: linear-gradient(135deg, #FFE0B2, #FFCC80);
+  --phase-ovulation: #66BB6A;
+  --phase-ovulation-bg: linear-gradient(135deg, #C8E6C9, #A5D6A7);
+  --phase-luteal: #AB47BC;
+  --phase-luteal-bg: linear-gradient(135deg, #E1BEE7, #CE93D8);
+
+  /* Borders & Shadows */
+  --border-light: rgba(236, 64, 122, 0.12);
+  --border-medium: rgba(236, 64, 122, 0.2);
+  --shadow-sm: 0 2px 8px rgba(236, 64, 122, 0.06);
+  --shadow-md: 0 4px 24px rgba(236, 64, 122, 0.08);
+  --shadow-lg: 0 8px 40px rgba(236, 64, 122, 0.12);
+  --shadow-glow: 0 0 20px rgba(236, 64, 122, 0.15);
+
+  /* Functional */
+  --success: #66BB6A;
+  --warning: #FFA726;
+  --error: #EF5350;
+  --info: #42A5F5;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(236, 64, 122, 0.15);
+  --glass-blur: 16px;
+
+  /* Typography */
+  --font-display: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Radius (extra rounded for kawaii feel) */
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Nav */
+  --nav-height: 72px;
+  --sidebar-width: 240px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Dark Mode ---- */
+[data-theme='dark'] {
+  --bg-primary: #1A1018;
+  --bg-secondary: #241820;
+  --bg-card: #2A1F28;
+  --bg-card-hover: #352A33;
+  --bg-input: #2A1F28;
+  --bg-nav: rgba(26, 16, 24, 0.92);
+
+  --pink-50: #2D1525;
+  --pink-100: #3D2035;
+  --pink-200: #5C2D4A;
+  --pink-300: #C2185B;
+  --pink-400: #E91E63;
+  --pink-500: #F06292;
+  --pink-600: #F48FB1;
+  --pink-700: #F8BBD0;
+  --pink-800: #FCE4EC;
+  --pink-900: #FFF0F5;
+
+  --text-primary: #F5E6EF;
+  --text-secondary: #B39DAD;
+  --text-tertiary: #7A6572;
+  --text-on-pink: #FFFFFF;
+
+  --phase-menstruation: #EF5350;
+  --phase-menstruation-bg: linear-gradient(135deg, #4A1A1A, #6B2020);
+  --phase-follicular: #FFB74D;
+  --phase-follicular-bg: linear-gradient(135deg, #4A3A1A, #5C4520);
+  --phase-ovulation: #66BB6A;
+  --phase-ovulation-bg: linear-gradient(135deg, #1A3A1A, #205C20);
+  --phase-luteal: #AB47BC;
+  --phase-luteal-bg: linear-gradient(135deg, #3A1A4A, #4A205C);
+
+  --border-light: rgba(240, 98, 146, 0.1);
+  --border-medium: rgba(240, 98, 146, 0.18);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 20px rgba(240, 98, 146, 0.15);
+
+  --glass-bg: rgba(42, 31, 40, 0.85);
+  --glass-border: rgba(240, 98, 146, 0.12);
+}
+
+/* ---- Reset & Base ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  transition: background var(--transition-normal), color var(--transition-normal);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: var(--pink-500);
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* ---- Typography ---- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.text-hero {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.text-h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.text-h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.text-body {
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.text-caption {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.text-micro {
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  color: var(--text-tertiary);
+}
+
+/* ---- Card Component ---- */
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), background var(--transition-normal);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-flat {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  transition: background var(--transition-normal), border-color var(--transition-normal);
+}
+
+/* ---- Button Styles ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink-500), var(--pink-600));
+  color: var(--text-on-pink);
+  box-shadow: 0 4px 14px rgba(236, 64, 122, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(236, 64, 122, 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: var(--pink-50);
+  color: var(--pink-600);
+  border: 1px solid var(--border-light);
+}
+
+.btn-secondary:hover {
+  background: var(--pink-100);
+}
+
+.btn-ghost {
+  color: var(--text-secondary);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.btn-ghost:hover {
+  background: var(--pink-50);
+  color: var(--pink-500);
+}
+
+/* ---- Badge ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-pink {
+  background: var(--pink-100);
+  color: var(--pink-700);
+}
+
+.badge-phase {
+  color: white;
+  font-weight: 700;
+}
+
+/* ---- Widget Grid ---- */
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink-200);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-300);
+}
+
+/* ---- Animations ---- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes ringPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(236, 64, 122, 0.3)); }
+  50% { filter: drop-shadow(0 0 16px rgba(236, 64, 122, 0.5)); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.05); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s ease forwards;
+}
+
+/* Staggered animations */
+.stagger-1 { animation-delay: 0.05s; }
+.stagger-2 { animation-delay: 0.1s; }
+.stagger-3 { animation-delay: 0.15s; }
+.stagger-4 { animation-delay: 0.2s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.3s; }
+
+/* ---- Responsive ---- */
+@media (max-width: 639px) {
+  :root {
+    --space-lg: 16px;
+    --space-xl: 24px;
+    --space-2xl: 32px;
+  }
+  .text-hero {
+    font-size: 1.75rem;
+  }
+  .text-h1 {
+    font-size: 1.375rem;
+  }
+  .widget-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .widget-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
