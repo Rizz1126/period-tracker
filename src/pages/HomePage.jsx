@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCycle } from '../context/CycleContext';
 import DashboardSummary from '../components/dashboard/DashboardSummary';
+import DailyLogSection from '../components/dashboard/DailyLogSection';
 import StartPeriodForm from '../components/dashboard/StartPeriodForm';
 import './HomePage.css';
 
@@ -11,6 +12,8 @@ export default function HomePage() {
   return (
     <div className="home-page" id="dashboard-home">
       <DashboardSummary />
+
+      {activeCycle && <DailyLogSection />}
 
       {!activeCycle && (
         <section className="start-period-card card-flat animate-fade-in-up" id="start-period-card">
