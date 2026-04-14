@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useCycle } from '../context/CycleContext';
 import DashboardSummary from '../components/dashboard/DashboardSummary';
 import StartPeriodForm from '../components/dashboard/StartPeriodForm';
-import DailyLogSection from '../components/dashboard/DailyLogSection';
 import './HomePage.css';
 
 export default function HomePage() {
@@ -28,8 +27,6 @@ export default function HomePage() {
           {showStartForm && <StartPeriodForm onClose={() => setShowStartForm(false)} />}
         </section>
       )}
-
-      <DailyLogSection />
 
       <div style={{ height: 'var(--space-xl)' }} />
     </div>
